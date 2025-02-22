@@ -16,4 +16,4 @@ author = 39889194
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m letta"
+args = "python main.py"
