@@ -1,6 +1,5 @@
 {pkgs}: {
   deps = [
-    pkgs.docker
     pkgs.zlib
     pkgs.pkg-config
     pkgs.openssl
