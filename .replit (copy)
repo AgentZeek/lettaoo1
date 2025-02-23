@@ -1,0 +1,38 @@
+modules = ["docker"]
+run = "docker run -p 8283:8283 -e OPENAI_API_KEY=$OPENAI_API_KEY -e LETTA_PG_URI=$LETTA_PG_URI letta/letta:latest"
+
+[nix]
+channel = "stable-24.05"
+
+[ports]
+localPort = 8283
+externalPort = 8283
+
+//////
+
+run = "docker run -p 8283:8283 -e OPENAI_API_KEY=$OPENAI_API_KEY -e LETTA_PG_URI=$LETTA_PG_URI letta/letta:latest"
+
+////// ORIGINAL
+modules = ["python-3.12", "bash", "web"]
+run = "run"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "run"]
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 39889194
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python main.py"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
