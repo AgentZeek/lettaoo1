@@ -7,3 +7,13 @@ channel = "stable-24.05"
 [ports]
 localPort = 8283
 externalPort = 8283
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Workflow Install"
+mode = "sequential"
+author = 39889194
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
